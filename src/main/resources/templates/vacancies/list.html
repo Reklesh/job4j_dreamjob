@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://thymeleaf.org">
+<html lang="en" xmlns:th="http://thymeleaf.org">
 <head th:include="fragments/header :: header"></head>
 <body>
 <div th:replace="fragments/navigation :: navigation"></div>
@@ -9,8 +9,7 @@
             <thead>
             <tr>
                 <th scope="col">#</th>
-                <th scope="col">Имя</th>
-                <th scope="col">Описание</th>
+                <th scope="col">Название</th>
                 <th scope="col">Время создания</th>
             </tr>
             </thead>
@@ -18,7 +17,6 @@
             <tr th:each="vacancy: ${vacancies}">
                 <td th:text="${vacancy.id}"/>
                 <td th:text="${vacancy.title}"/>
-                <td th:text="${vacancy.description}"/>
                 <td th:text="${#temporals.format(vacancy.creationDate, 'dd.MM.yyyy HH:mm')}"/>
             </tr>
             </tbody>
