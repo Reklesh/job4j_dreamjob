@@ -10,6 +10,9 @@ public class Candidate {
     private String description;
     private LocalDateTime creationDate = LocalDateTime.now().withNano(0);
 
+    public Candidate() {
+    }
+
     public Candidate(int id, String name, String description) {
         this.id = id;
         this.name = name;
